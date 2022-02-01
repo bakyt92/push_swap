@@ -4,9 +4,16 @@
 #include <stdio.h>
 
 typedef struct t_node {
-	int flag;
-	int
-};
+	int value;
+	int	order_sort;
+	int generation;
+	struct t_node *next;
+	struct t_node *prev;
+} s_Node;
 
+typedef struct t_process {
+	int x;
+	int y;
+} s_process;
 
 #endif
