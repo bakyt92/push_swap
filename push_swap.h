@@ -22,4 +22,8 @@ typedef struct t_allData {
 	int max;
 } s_allData;
 
+char	*ft_strdup(const char *s);
+char	*ft_strjoin(char *s1, char *s2);
+
+
 #endif
