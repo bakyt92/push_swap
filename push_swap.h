@@ -6,8 +6,9 @@
 
 typedef struct t_node {
 	int value;
-	int	order_sort;
+	int	index;
 	int generation;
+	int flag; /*зачем эта переменная???*/
 	struct t_node *next;
 	struct t_node *prev;
 } s_Node;

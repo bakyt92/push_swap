@@ -38,6 +38,7 @@ s_allData	*read_args(int argc, char **argv)
 		i++;
 	}
 	ft_process(array);
+
 }
 
 int main(int argc, char **argv)
