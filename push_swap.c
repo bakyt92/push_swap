@@ -17,7 +17,7 @@ char	*read_line(int i, char **argv)
 
 	j = 0;
 	line = ft_strdup("");
-	while(argv[i][j])
+	while(argv[i])
 	{
 		line = ft_strjoin(line, argv[i][j]);
 		j++;
@@ -25,7 +25,7 @@ char	*read_line(int i, char **argv)
 	return (line);
 }
 
-s_allData	*read_args(int argc, char **argv)
+void	read_args(int argc, char **argv, s_allData *stacks)
 {
 	int i;
 	char *array;
@@ -34,11 +34,11 @@ s_allData	*read_args(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		array = ft_strjoin(array, read_line(i, argv));
-		i++;
-	}
-	ft_process(array);
+		if(!check_arg(argv[i]))
+			ft_error("Error\n");
 
+
+	}
 }
 
 int main(int argc, char **argv)
@@ -50,8 +50,13 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	else
+		read_args(argc, argv, &stacks);
+
+
+
+
 	{
-		stacks = read_args(argc, argv);
+
 		sort(stacks);
 		free_stack(stacks);
 	}
