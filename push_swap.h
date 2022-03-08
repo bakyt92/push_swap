@@ -27,6 +27,8 @@ typedef struct t_allData {
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
 int		check_arg(char *str);
-void	ft_error (char *str);
+void	ft_error (char *str, s_allData *stacks);
+void	ft_free_list(s_list **list);
+int		ft_isdigit(int c)
 
 #endif

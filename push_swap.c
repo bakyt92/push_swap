@@ -19,8 +19,8 @@ char	*read_line(int i, char **argv)
 	line = ft_strdup("");
 	while(argv[i])
 	{
-		line = ft_strjoin(line, argv[i][j]);
-		j++;
+		line = ft_strjoin(line, &argv[i][j]);
+		i++;
 	}
 	return (line);
 }
@@ -28,15 +28,22 @@ char	*read_line(int i, char **argv)
 void	read_args(int argc, char **argv, s_allData *stacks)
 {
 	int i;
+	int j;
 	char *array;
 
 	array = ft_strdup("");
 	i = 1;
 	while (i < argc)
 	{
+		j = 0;
 		if(!check_arg(argv[i]))
-			ft_error("Error\n");
-
+			ft_error("Error\n", stacks);
+		while(argv[i][j++])
+		{
+			if(argv[i][j] != '+' && argv[i][j] != '-' && argv[i][j] != ' ' &&
+			!ft_isdigit(argv[i][j]))
+				ft_error("Error\n", stacks);
+		}
 
 	}
 }
@@ -50,9 +57,7 @@ int main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	else
-		read_args(argc, argv, &stacks);
-
-
+		read_args(argc, argv, stacks);
 
 
 	{

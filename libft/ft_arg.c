@@ -1,5 +1,12 @@
 #include "../push_swap.h"
 
+int ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (0);
+	return (1);
+}
+
 int	check_arg(char *str)
 {
 	int i;
@@ -17,16 +24,17 @@ int	check_arg(char *str)
 	return (0);
 }
 
-void ft_error (char *str)
+void ft_error (char *str, s_allData *stacks)
 {
 	int i;
 
 	i = 0;
 	while (str[i])
 	{
-		write(1, str[i], 1);
+		write(2, str[i], 1);
 		i++;
 	}
-	// ОЧИСТКА ПАМЯТИ
-	return ;
+	ft_free_list(&(stacks->stack_a));
+	ft_free_list(&(stacks->stack_b));
+	exit(EXIT_FAILURE);
 }
