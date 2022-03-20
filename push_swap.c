@@ -1,8 +1,29 @@
 #include "push_swap.h"
 
-void	sort(s_allData *stacks)
+void	ft_sorting(s_list **stacks)
 {
+	s_list	*last;
+	s_list	*pred;
 
+	pred = NULL;
+	last = *stacks;
+	while (last && last->next_sorted)
+	{
+		if (last->value - last->next_sorted->value > 0)
+		{
+			if (pred == NULL)
+				ft_sw_list(stacks, last);
+			else
+				ft_sw_list(&(pred->next_sorted), last);
+			last = *stacks;
+			pred = NULL;
+		}
+		else
+		{
+			pred = last;
+			last = last->next_sorted;
+		}
+	}
 }
 
 void	free_stack(s_allData *stacks)
@@ -58,16 +79,24 @@ void	read_arguments(int argc, char **argv, s_allData *stacks)
 
 int main(int argc, char **argv)
 {
-	s_allData *stacks;
+	s_allData	*stacks;
+	s_list		*start;
 
 	stacks->stack_a = NULL;
 	stacks->stack_b = NULL;
 	if (argc < 2)
 		return (0);
 	read_arguments(argc, argv, stacks);
-	if (ft_ordered(stacks))
+	if (!ft_ordered(stacks))
 	{
-
+		start = stacks->stack_a;
+		ft_sorting(&start);
+		ft_indexing(start, stacks);
+		if (stacks->max == 5)
+			ft_5args(stacks);
+		ft_reshenie(&stacks, 1);
 	}
-	return 0;
+	/* CLEAR ALL добавить */
+	start = NULL;
+	return (0);
 }

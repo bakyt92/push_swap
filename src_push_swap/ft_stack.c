@@ -23,7 +23,7 @@ void	push_stack(s_list **stack, int val, int tag, s_allData *stacks)
 	if (!elem)
 		ft_error("Error\n", stacks);
 	elem->next = NULL;
-	elem->prev = NULL;
+	elem->next_sorted = NULL;
 	elem->value = val;
 	elem->index = tag;
 	if (last_el == NULL)
@@ -34,5 +34,5 @@ void	push_stack(s_list **stack, int val, int tag, s_allData *stacks)
 	while (last_el->next)
 		last_el = last_el->next;
 	last_el->next = elem;
-	last_el->prev = elem;
+	last_el->next_sorted = elem;
 }
