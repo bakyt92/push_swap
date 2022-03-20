@@ -29,6 +29,13 @@ char	*ft_strjoin(char *s1, char *s2);
 int		check_arg(char *str);
 void	ft_error (char *str, s_allData *stacks);
 void	ft_free_list(s_list **list);
-int		ft_isdigit(int c)
+int		ft_isdigit(int c);
+void	read_arguments(int argc, char **argv, s_allData *stacks);
+/* ft_stack */
+void	push_stack(s_list **stack, int val, int tag, s_allData *stacks);
+int	ft_hasvalue(s_list *l, int val);
+
+/* ft_functions 1-3 */
+int ft_atoi(char *str, s_allData *stacks);
 
 #endif

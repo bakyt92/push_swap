@@ -25,26 +25,34 @@ char	*read_line(int i, char **argv)
 	return (line);
 }
 
-void	read_args(int argc, char **argv, s_allData *stacks)
+void	read_arguments(int argc, char **argv, s_allData *stacks)
 {
 	int i;
 	int j;
-	char *array;
+	int space_1;
 
-	array = ft_strdup("");
 	i = 1;
 	while (i < argc)
 	{
 		j = 0;
+		space_1 = 1;
 		if(!check_arg(argv[i]))
 			ft_error("Error\n", stacks);
-		while(argv[i][j++])
+		while(argv[i][j])
 		{
 			if(argv[i][j] != '+' && argv[i][j] != '-' && argv[i][j] != ' ' &&
 			!ft_isdigit(argv[i][j]))
 				ft_error("Error\n", stacks);
+			if (space_1 == 1 && argv[i][j] != ' ')
+			{
+				push_stack(&(stacks->stack_a), ft_atoi(argv[i] + j, stacks),
+						   -1,stacks);
+				space_1 = 0;
+			}
+			space_1 = argv[i][j] == ' ';
+			j++;
 		}
-
+		i++;
 	}
 }
 
@@ -56,15 +64,10 @@ int main(int argc, char **argv)
 	stacks->stack_b = NULL;
 	if (argc < 2)
 		return (0);
-	else
-		read_args(argc, argv, stacks);
-
-
+	read_arguments(argc, argv, stacks);
+	if (ft_ordered(stacks))
 	{
 
-		sort(stacks);
-		free_stack(stacks);
 	}
 	return 0;
 }
-
