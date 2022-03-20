@@ -36,6 +36,7 @@ typedef struct t_allData {
 	int		big;
 	int		min;
 	int		max;
+	int		print;
 } s_allData;
 
 char	*ft_strdup(const char *s);
@@ -44,6 +45,7 @@ int		check_arg(char *str);
 void	ft_error (char *str, s_allData *stacks);
 void	ft_free_list(s_list **list);
 int		ft_isdigit(int c);
+void	ft_putstr(char *str);
 
 /* ft_stack */
 void	push_stack(s_list **stack, int val, int tag, s_allData *stacks);
@@ -55,6 +57,7 @@ int		ft_ordered(s_allData *stacks);
 void	ft_sw_list(s_list **pred, s_list *last);
 int		ft_lst_size(s_list *t);
 int		ft_positive(int a);
+int		ft_maximum(int a, int b);
 
 /* file push_swap */
 void	ft_sorting(s_list **stacks);
