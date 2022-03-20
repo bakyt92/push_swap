@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 21:07:12 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/03/20 21:11:33 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_sorting(s_list **stacks)
@@ -26,19 +38,14 @@ void	ft_sorting(s_list **stacks)
 	}
 }
 
-void	free_stack(s_allData *stacks)
-{
-
-}
-
 char	*read_line(int i, char **argv)
 {
-	char *line;
-	int j;
+	char	*line;
+	int		j;
 
 	j = 0;
 	line = ft_strdup("");
-	while(argv[i])
+	while (argv[i])
 	{
 		line = ft_strjoin(line, &argv[i][j]);
 		i++;
@@ -48,26 +55,26 @@ char	*read_line(int i, char **argv)
 
 void	read_arguments(int argc, char **argv, s_allData *stacks)
 {
-	int i;
-	int j;
-	int space_1;
+	int	i;
+	int	j;
+	int	space_1;
 
 	i = 1;
 	while (i < argc)
 	{
 		j = 0;
 		space_1 = 1;
-		if(!check_arg(argv[i]))
+		if (!check_arg(argv[i]))
 			ft_error("Error\n", stacks);
-		while(argv[i][j])
+		while (argv[i][j])
 		{
-			if(argv[i][j] != '+' && argv[i][j] != '-' && argv[i][j] != ' ' &&
+			if (argv[i][j] != '+' && argv[i][j] != '-' && argv[i][j] != ' ' &&
 			!ft_isdigit(argv[i][j]))
 				ft_error("Error\n", stacks);
 			if (space_1 == 1 && argv[i][j] != ' ')
 			{
 				push_stack(&(stacks->stack_a), ft_atoi(argv[i] + j, stacks),
-						   -1,stacks);
+					-1, stacks);
 				space_1 = 0;
 			}
 			space_1 = argv[i][j] == ' ';
@@ -77,7 +84,7 @@ void	read_arguments(int argc, char **argv, s_allData *stacks)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	s_allData	*stacks;
 	s_list		*start;

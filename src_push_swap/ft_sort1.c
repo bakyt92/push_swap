@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort1.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 21:06:37 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/03/20 21:17:05 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	ft_has_index(s_list *t, int index)
@@ -27,7 +39,6 @@ int	ft_count_to_top(s_list *t, int index)
 	}
 	if (i > size / 2)
 		i = i - size;
-
 }
 
 void	ft_indexing(s_list *start, s_allData *stacks)
@@ -35,7 +46,7 @@ void	ft_indexing(s_list *start, s_allData *stacks)
 	int	i;
 
 	i = 0;
-	while(start)
+	while (start)
 	{
 		start->index = i++;
 		start = start->next_sorted;

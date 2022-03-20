@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 21:06:20 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/03/20 21:16:15 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 char	*ft_strdup(const char *s)
@@ -32,7 +44,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen((char *)s1)
-	+ ft_strlen((char *)s2) + 1));
+				+ ft_strlen((char *)s2) + 1));
 	if (!str)
 		return (NULL);
 	j = 0;

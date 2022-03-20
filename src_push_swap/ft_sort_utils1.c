@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_utils1.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 21:06:28 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/03/20 21:21:23 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void ft_init_reshenie(s_allData *stacks)
+void	ft_init_reshenie(s_allData *stacks)
 {
 	stacks->big = ft_find_biggest_loop(stacks->stack_a, 1);
 	stacks->size = ft_lst_size(stacks->stack_a);
@@ -32,16 +44,16 @@ int	ft_make_loop(s_list *tmp, s_list *begin, int number)
 		if (loop == NULL)
 			loop = tmp;
 		if (loop = begin)
-			break;
+			break ;
 	}
 	return (count);
 }
 
-int ft_find_biggest_loop(s_list *begin, int number)
+int	ft_find_biggest_loop(s_list *begin, int number)
 {
 	s_list	*t;
-	int 	maximum;
-	int 	count;
+	int		maximum;
+	int		count;
 	s_list	*max_flag;
 
 	maximum = 0;
@@ -61,12 +73,12 @@ int ft_find_biggest_loop(s_list *begin, int number)
 	return (maximum);
 }
 
-int ft_isswapable(s_list *tmp)
+int	ft_isswapable(s_list *tmp)
 {
 	s_list	*example;
 	s_list	*example2;
-	int 	counter1;
-	int 	counter2;
+	int		counter1;
+	int		counter2;
 
 	example->next = example2;
 	example->index = tmp->next->index;
@@ -84,7 +96,7 @@ s_list	*ft_blizko_ingroup(s_list *tmp, int gen, int generation_size)
 	s_list	*blizko;
 	s_list	*current;
 	int		distance;
-	int 	current_distance;
+	int		current_distance;
 
 	distance = gen * generation_size;
 	blizko = NULL;
