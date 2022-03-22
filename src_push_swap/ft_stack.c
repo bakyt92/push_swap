@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:06:57 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:07:04 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/03/23 02:15:12 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_hasvalue(s_list *l, int val)
 
 void	push_stack(s_list **stack, int val, int tag, s_allData *stacks)
 {
-	s_list *elem;
-	s_list *last_el;
+	s_list	*elem;
+	s_list	*last_el;
 
 	last_el = *stack;
 	if (ft_hasvalue(*stack, val))

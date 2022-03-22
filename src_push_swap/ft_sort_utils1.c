@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:06:28 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:21:23 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/03/23 02:14:59 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_make_loop(s_list *tmp, s_list *begin, int number)
 		loop = loop->next;
 		if (loop == NULL)
 			loop = tmp;
-		if (loop = begin)
+		if (loop == begin)
 			break ;
 	}
 	return (count);
