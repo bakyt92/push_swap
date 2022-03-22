@@ -101,7 +101,7 @@ int	main(int argc, char **argv)
 		ft_indexing(start, stacks);
 		if (stacks->max == 5)
 			ft_5args(stacks);
-		ft_reshenie(&stacks, 1);
+		ft_reshenie(stacks, 1);
 	}
 	/* CLEAR ALL добавить */
 	start = NULL;

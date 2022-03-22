@@ -36,8 +36,16 @@ int	ft_positive(int a)
 int	ft_maximum(int a, int b)
 {
 	if (a > b)
-		return (b);
-	else
 		return (a);
+	else
+		return (b);
+}
+
+int ft_minimum(int a, int b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
 }
 

@@ -21,7 +21,7 @@ void	ft_reshenie(s_allData *stacks, int gen)
 	{
 		stacks->temp = ft_blizko_ingroup(stacks->stack_a, gen,
 				stacks->gen_size);
-		if (stacks->temp = NULL && ++gen)
+		if (stacks->temp == NULL && ++gen)
 			continue ;
 		distance = ft_count_to_top(stacks->stack_a, stacks->temp->index);
 		if (stacks->stack_a && ft_isswapable(stacks->stack_a))
@@ -37,7 +37,18 @@ void	ft_reshenie(s_allData *stacks, int gen)
 		else if (stacks->generation == 1)
 			ft_rotate_b_a(stacks);
 		else
-			ft_rotate(stacks, ft_min(1, ft_max(-1, distance)));
+			ft_rotate(stacks, ft_minimum(1, ft_maximum(-1, distance)), 0);
 	}
 	ft_populate_b(stacks);
+}
+
+void	ft_populate_b(s_allData *stacks)
+{
+	int	rot_a;
+	int	rot_b;
+
+	while (stacks->stack_b)
+	{
+
+	}
 }

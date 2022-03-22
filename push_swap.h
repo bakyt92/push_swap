@@ -58,6 +58,7 @@ void	ft_sw_list(s_list **pred, s_list *last);
 int		ft_lst_size(s_list *t);
 int		ft_positive(int a);
 int		ft_maximum(int a, int b);
+int		ft_minimum(int a, int b);
 
 /* file push_swap */
 void	ft_sorting(s_list **stacks);
@@ -69,6 +70,7 @@ void	ft_5args(s_allData *stacks);
 int		ft_count_to_top(s_list *t, int index);
 int		ft_has_index(s_list *t, int index);
 void	ft_reshenie(s_allData *stacks, int gen);
+void	ft_populate_b(s_allData *stacks);
 
 /* ft_sort_utils */
 s_list	*ft_blizko_ingroup (s_list *tmp, int gen, int generation_size);
@@ -79,5 +81,21 @@ void 	ft_init_reshenie(s_allData *stacks);
 
 /* ft_commands */
 void	ft_rotate(s_allData *stacks, int rot_a, int rot_b);
+void 	ft_double_rotate(s_allData *stacks, int *rot_a, int *rot_b);
+void	ft_swap_a(s_allData *stacks);
+void	ft_swap_b(s_allData *stacks);
+void	ft_swap_b_a(s_allData *stacks);
+void	ft_push_a(s_allData *stacks);
+void	ft_push_b(s_allData *stacks);
+void	ft_reverse_rotate_a(s_allData *stacks);
+void	ft_reverse_rotate_b(s_allData *stacks);
+void	ft_reverse_rotate_b_a(s_allData *stacks);
+void	ft_rotate_a(s_allData *stacks);
+void	ft_rotate_b(s_allData *stacks);
+void	ft_rotate_b_a(s_allData *stacks);
+void	ft_swap_lst(s_list *stacks);
+void	ft_push_top12(s_list *place1, s_list *place2);
+void	ft_push_bottom(s_list *t);
+void	ft_push_top(s_list *t);
 
 #endif
