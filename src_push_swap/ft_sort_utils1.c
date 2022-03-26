@@ -85,7 +85,7 @@ int	ft_isswapable(s_list *tmp)
 	example2->next = tmp->next->next;
 	example2->index = tmp->index;
 	counter1 = ft_find_biggest_loop(tmp, 0);
-	counter2 = ft_find_biggest_loop(&example, 0);
+	counter2 = ft_find_biggest_loop(example, 0);
 	if (counter2 > counter1)
 		return (1);
 	return (0);

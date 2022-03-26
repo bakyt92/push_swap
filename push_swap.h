@@ -31,21 +31,27 @@ typedef struct t_allData {
 	s_list	*temp;
 	int		generation;
 	int		gen_size;
-	int		median;
+//	int		median;
 	int		size;
 	int		big;
-	int		min;
+//	int		min;
 	int		max;
 	int		print;
 } s_allData;
 
+/* ft_libft  */
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
-int		check_arg(char *str);
-void	ft_error (char *str, s_allData *stacks);
-void	ft_free_list(s_list **list);
+int 	ft_strlen(const char *str);
+
+/* ft_arg */
 int		ft_isdigit(int c);
 void	ft_putstr(char *str);
+int		check_arg(char *str);
+void	ft_error (char *str, s_allData *stacks);
+
+/* ft_clean */
+void	ft_free_list(s_list **list);
 
 /* ft_stack */
 void	push_stack(s_list **stack, int val, int tag, s_allData *stacks);

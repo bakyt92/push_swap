@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_commands4.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/23 02:11:35 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/03/23 02:14:03 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	ft_rotate_b_a(s_allData *stacks)
@@ -25,6 +37,7 @@ void	ft_swap_lst(s_list *stacks)
 void	ft_push_top12(s_list *place1, s_list *place2)
 {
 	s_list	*top;
+
 	if (!place1)
 		return ;
 	top = place1;
@@ -38,10 +51,10 @@ void	ft_push_top12(s_list *place1, s_list *place2)
 
 void	ft_push_bottom(s_list *t)
 {
-	s_list *top;
-	s_list *tmp;
+	s_list	*top;
+	s_list	*tmp;
 
-	if(!t || !t->next)
+	if (!t || !t->next)
 		return ;
 	top = t;
 	t = t->next;
@@ -59,7 +72,7 @@ void	ft_push_top(s_list *t)
 	s_list	*tmp;
 	s_list	*last;
 
-	if(!t || !t->next)
+	if (!t || !t->next)
 		return ;
 	last = t;
 	while (last->next)

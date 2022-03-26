@@ -58,3 +58,13 @@ char	*ft_strjoin(char *s1, char *s2)
 	free (s1);
 	return (str);
 }
+
+int ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	return (i);
+}
