@@ -49,3 +49,13 @@ int ft_minimum(int a, int b)
 		return (b);
 }
 
+s_list	*ft_get_last(s_list *t)
+{
+	if (t == NULL)
+		return (NULL);
+	while (t->next)
+	{
+		t = t->next;
+	}
+	return (t);
+}

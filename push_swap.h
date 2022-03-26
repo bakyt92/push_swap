@@ -65,6 +65,7 @@ int		ft_lst_size(s_list *t);
 int		ft_positive(int a);
 int		ft_maximum(int a, int b);
 int		ft_minimum(int a, int b);
+s_list	*ft_get_last(s_list *t);
 
 /* file push_swap */
 void	ft_sorting(s_list **stacks);
@@ -77,6 +78,10 @@ int		ft_count_to_top(s_list *t, int index);
 int		ft_has_index(s_list *t, int index);
 void	ft_reshenie(s_allData *stacks, int gen);
 void	ft_populate_b(s_allData *stacks);
+int		ft_count_to_index(int index, int size);
+void	ft_calculate_b_rotation(s_allData *stacks, int max_dist, int *rot_a,
+								int *rot_b);
+int		ft_insert_distance(s_list *list, int t, int size);
 
 /* ft_sort_utils */
 s_list	*ft_blizko_ingroup (s_list *tmp, int gen, int generation_size);

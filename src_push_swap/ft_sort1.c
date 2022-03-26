@@ -39,6 +39,7 @@ int	ft_count_to_top(s_list *t, int index)
 	}
 	if (i > size / 2)
 		i = i - size;
+	return (i);
 }
 
 void	ft_indexing(s_list *start, s_allData *stacks)
