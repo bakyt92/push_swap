@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:07:12 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:11:33 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/03/27 21:30:10 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	read_arguments(int argc, char **argv, s_allData *stacks)
 			if (space_1 == 1 && argv[i][j] != ' ')
 			{
 				push_stack(&(stacks->stack_a), ft_atoi(argv[i] + j,
-													stacks), -1, stacks);
+						stacks), -1, stacks);
 				space_1 = 0;
 			}
 			space_1 = argv[i][j] == ' ';
@@ -88,15 +88,14 @@ int	main(int argc, char **argv)
 {
 	s_allData	*stacks;
 	s_list		*start;
+	
 	stacks = malloc(sizeof(s_allData));
 	if (!stacks)
 		return (0);
 	start = malloc(sizeof(s_list));
 	if (!start)
 		return (0);
-//	stacks->stack_a = malloc(sizeof(s_list));
 	stacks->stack_a = NULL;
-//	stacks->stack_b = malloc(sizeof(s_list));
 	stacks->stack_b = NULL;
 	if (argc < 2)
 	{

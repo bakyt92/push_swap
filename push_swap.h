@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 21:07:20 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:07:22 by ufitzhug         ###   ########.fr       */
+/*   Created: 2022/03/27 21:36:38 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/03/27 21:44:35 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INC_05_1_PUSH_SWAP_PUSH_SWAP_H
-#define INC_05_1_PUSH_SWAP_PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct t_list {
-	int		value;
-	int		index;
-	int		flag;
-	struct	t_list *next;
-	struct	t_list *next_sorted;
-} 			s_list;
+	int				value;
+	int				index;
+	int				flag;
+	struct t_list	*next;
+	struct t_list	*next_sorted;
+}					s_list;
 
 typedef struct t_allData {
 	s_list	*stack_a;
@@ -32,24 +31,22 @@ typedef struct t_allData {
 	s_list	*temp;
 	int		generation;
 	int		gen_size;
-//	int		median;
 	int		size;
 	int		big;
-//	int		min;
 	int		max;
 	int		print;
-} s_allData;
+}			s_allData;
 
 /* ft_libft  */
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
-int 	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
 
 /* ft_arg */
 int		ft_isdigit(int c);
 void	ft_putstr(char *str);
 int		check_arg(char *str);
-void	ft_error (char *str, s_allData *stacks);
+void	ft_error(char *str, s_allData *stacks);
 
 /* ft_clean */
 void	ft_free_list(s_list **list);
@@ -81,19 +78,19 @@ void	ft_reshenie(s_allData *stacks, int gen);
 void	ft_populate_b(s_allData *stacks);
 int		ft_count_to_index(int index, int size);
 void	ft_calculate_b_rotation(s_allData *stacks, int max_dist, int *rot_a,
-								int *rot_b);
+			int *rot_b);
 int		ft_insert_distance(s_list *list, int t, int size);
 
 /* ft_sort_utils */
-s_list	*ft_blizko_ingroup (s_list *tmp, int gen, int generation_size);
-int 	ft_isswapable(s_list *tmp);
-int 	ft_find_biggest_loop(s_list *begin, int number);
+s_list	*ft_blizko_ingroup(s_list *tmp, int gen, int generation_size);
+int		ft_isswapable(s_list *tmp);
+int		ft_find_biggest_loop(s_list *begin, int number);
 int		ft_make_loop(s_list *tmp, s_list *begin, int number);
-void 	ft_init_reshenie(s_allData *stacks);
+void	ft_init_reshenie(s_allData *stacks);
 
 /* ft_commands */
 void	ft_rotate(s_allData *stacks, int rot_a, int rot_b);
-void 	ft_double_rotate(s_allData *stacks, int *rot_a, int *rot_b);
+void	ft_double_rotate(s_allData *stacks, int *rot_a, int *rot_b);
 void	ft_swap_a(s_allData *stacks);
 void	ft_swap_b(s_allData *stacks);
 void	ft_swap_b_a(s_allData *stacks);
