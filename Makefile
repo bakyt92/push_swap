@@ -36,13 +36,13 @@ all : $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
 #	cd libft && make bonus && make
-	$(CC) $(FLAGS) -O2 $(OBJ) libft/libft.a -o $(NAME)
+	$(CC) $(FLAGS) -O2 $(OBJ) -o $(NAME)
 
 bonus : $(NAME_B)
 
 $(NAME_B) : $(OBJ_B) $(HEADER_B)
 #	cd libft && make bonus && make
-	$(CC) $(FLAGS) -O2 $(OBJ_B) a -o $(NAME_B)
+	$(CC) $(FLAGS) -O2 $(OBJ_B) -o $(NAME_B)
 
 %.o	: %.c $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@

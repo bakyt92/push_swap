@@ -49,7 +49,7 @@ void	ft_populate_b(s_allData *stacks)
 
 	while (stacks->stack_b)
 	{
-		ft_calculate_b_rotation(stacks, &rot_a, &rot_b);
+		ft_calculate_b_rotation(stacks, stacks->max, &rot_a, &rot_b);
 		ft_rotate(stacks, rot_a, rot_b);
 		ft_push_a(stacks);
 		(stacks->size)++;
@@ -80,8 +80,8 @@ void	ft_calculate_b_rotation(s_allData *stacks, int max_dist, int *rot_a,
 		if (dist_total < max_dist)
 		{
 			max_dist = dist_total;
-			rot_a = insert;
-			rot_b = distance_b;
+			*rot_a = insert;
+			*rot_b = distance_b;
 		}
 		stacks->temp = stacks->temp->next;
 	}

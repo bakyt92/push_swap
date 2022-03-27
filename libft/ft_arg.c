@@ -19,7 +19,7 @@ void	ft_putstr(char *str)
 		write(1, str, 1);
 		str++;
 	}
-	write(1, '\n', 1);
+	write(1,"\n", 1);
 }
 
 int ft_isdigit(int c)
@@ -37,9 +37,9 @@ int	check_arg(char *str)
 	while (str[i])
 	{
 		if (str[i] >= '0' &&  str[i] <= '9')
-			i++;
-		else
 			return(1);
+		else
+			i++;
 	}
 	return (0);
 }
@@ -51,7 +51,7 @@ void ft_error (char *str, s_allData *stacks)
 	i = 0;
 	while (str[i])
 	{
-		write(2, str[i], 1);
+		write(2, &str[i], 1);
 		i++;
 	}
 	ft_free_list(&(stacks->stack_a));

@@ -23,13 +23,15 @@ int	ft_hasvalue(s_list *l, int val)
 	return (0);
 }
 
-void	push_stack(s_list **stack, int val, int tag, s_allData *stacks)
+void	push_stack(s_list **stack_a, int val, int tag, s_allData *stacks)
 {
 	s_list	*elem;
 	s_list	*last_el;
 
-	last_el = *stack;
-	if (ft_hasvalue(*stack, val))
+//	last_el = NULL;
+//	elem = NULL;
+	last_el = *stack_a;
+	if (ft_hasvalue(*stack_a, val))
 		ft_error("Error\n", stacks);
 	elem = malloc(sizeof(s_list));
 	if (!elem)
@@ -40,7 +42,7 @@ void	push_stack(s_list **stack, int val, int tag, s_allData *stacks)
 	elem->index = tag;
 	if (last_el == NULL)
 	{
-		*stack = elem;
+		*stack_a = elem;
 		return ;
 	}
 	while (last_el->next)

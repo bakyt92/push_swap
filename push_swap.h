@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
 typedef struct t_list {
 	int		value;
 	int		index;

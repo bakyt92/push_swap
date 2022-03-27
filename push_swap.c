@@ -73,8 +73,8 @@ void	read_arguments(int argc, char **argv, s_allData *stacks)
 				ft_error("Error\n", stacks);
 			if (space_1 == 1 && argv[i][j] != ' ')
 			{
-				push_stack(&(stacks->stack_a), ft_atoi(argv[i] + j, stacks),
-					-1, stacks);
+				push_stack(&(stacks->stack_a), ft_atoi(argv[i] + j,
+													stacks), -1, stacks);
 				space_1 = 0;
 			}
 			space_1 = argv[i][j] == ' ';
@@ -88,11 +88,20 @@ int	main(int argc, char **argv)
 {
 	s_allData	*stacks;
 	s_list		*start;
-
+	stacks = malloc(sizeof(s_allData));
+	if (!stacks)
+		return (0);
+	start = malloc(sizeof(s_list));
+	if (!start)
+		return (0);
+//	stacks->stack_a = malloc(sizeof(s_list));
 	stacks->stack_a = NULL;
+//	stacks->stack_b = malloc(sizeof(s_list));
 	stacks->stack_b = NULL;
 	if (argc < 2)
+	{
 		return (0);
+	}
 	read_arguments(argc, argv, stacks);
 	if (!ft_ordered(stacks))
 	{
