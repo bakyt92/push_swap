@@ -44,7 +44,7 @@ int	check_arg(char *str)
 	return (0);
 }
 
-void ft_error (char *str, s_allData *stacks)
+void ft_error (char *str, t_allData *stacks)
 {
 	int i;
 

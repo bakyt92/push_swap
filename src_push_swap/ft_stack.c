@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	ft_hasvalue(s_list *l, int val)
+int	ft_hasvalue(t_list *l, int val)
 {
 	while (l)
 	{
@@ -23,20 +23,21 @@ int	ft_hasvalue(s_list *l, int val)
 	return (0);
 }
 
-void	push_stack(s_list **stack_a, int val, int tag, s_allData *stacks)
+void	push_stack(t_list **stack_a, int val, int tag, t_allData *stacks)
 {
-	s_list	*elem;
-	s_list	*last_el;
+	t_list	*elem;
+	t_list	*last_el;
 
 //	last_el = NULL;
 //	elem = NULL;
 	last_el = *stack_a;
 	if (ft_hasvalue(*stack_a, val))
 		ft_error("Error\n", stacks);
-	elem = malloc(sizeof(s_list));
+	elem = malloc(sizeof(t_list));
 	if (!elem)
 		ft_error("Error\n", stacks);
 	elem->next = NULL;
+	elem->previous = NULL;
 	elem->next_sorted = NULL;
 	elem->value = val;
 	elem->index = tag;

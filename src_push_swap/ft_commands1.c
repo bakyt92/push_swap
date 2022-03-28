@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_double_rotate(s_allData *stacks, int *rot_a, int *rot_b)
+void	ft_double_rotate(t_allData *stacks, int *rot_a, int *rot_b)
 {
 	while (*rot_a > 0 && *rot_b > 0)
 	{
@@ -28,7 +28,7 @@ void	ft_double_rotate(s_allData *stacks, int *rot_a, int *rot_b)
 	}
 }
 
-void	ft_rotate(s_allData *stacks, int rot_a, int rot_b)
+void	ft_rotate(t_allData *stacks, int rot_a, int rot_b)
 {
 	ft_double_rotate(stacks, &rot_a, &rot_b);
 	while (rot_a > 0)

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	ft_lst_size(s_list *t)
+int	ft_lst_size(t_list *t)
 {
 	int i;
 
@@ -49,7 +49,7 @@ int ft_minimum(int a, int b)
 		return (b);
 }
 
-s_list	*ft_get_last(s_list *t)
+t_list	*ft_get_last(t_list *t)
 {
 	if (t == NULL)
 		return (NULL);

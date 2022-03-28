@@ -12,10 +12,10 @@
 
 #include "../push_swap.h"
 
-void	ft_free_list(s_list **list)
+void	ft_free_list(t_list **list)
 {
-	s_list	*t;
-	s_list	*next;
+	t_list	*t;
+	t_list	*next;
 
 	t = *list;
 	while(t)

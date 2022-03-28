@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_reshenie(s_allData *stacks, int gen)
+void	ft_reshenie(t_allData *stacks, int gen)
 {
 	int	distance;
 
@@ -42,7 +42,7 @@ void	ft_reshenie(s_allData *stacks, int gen)
 	ft_populate_b(stacks);
 }
 
-void	ft_populate_b(s_allData *stacks)
+void	ft_populate_b(t_allData *stacks)
 {
 	int	rot_a;
 	int	rot_b;
@@ -57,8 +57,8 @@ void	ft_populate_b(s_allData *stacks)
 	ft_rotate(stacks, ft_count_to_top(stacks->stack_a, 0), 0);
 }
 
-void	ft_calculate_b_rotation(s_allData *stacks, int max_dist, int *rot_a,
-	int *rot_b)
+void	ft_calculate_b_rotation(t_allData *stacks, int max_dist, int *rot_a,
+								int *rot_b)
 {
 	int dist_total;
 	int insert;
@@ -94,10 +94,10 @@ int ft_count_to_index(int index, int size)
 	return (index);
 }
 
-int	ft_insert_distance(s_list *list, int t, int size)
+int	ft_insert_distance(t_list *list, int t, int size)
 {
-	s_list	*p;
-	s_list	*c;
+	t_list	*p;
+	t_list	*c;
 	int		c_max[2];
 	int		i;
 

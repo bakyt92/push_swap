@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	ft_has_index(s_list *t, int index)
+int	ft_has_index(t_list *t, int index)
 {
 	while (t)
 	{
@@ -23,7 +23,7 @@ int	ft_has_index(s_list *t, int index)
 	return (0);
 }
 
-int	ft_count_to_top(s_list *t, int index)
+int	ft_count_to_top(t_list *t, int index)
 {
 	int	i;
 	int	size;
@@ -42,7 +42,7 @@ int	ft_count_to_top(s_list *t, int index)
 	return (i);
 }
 
-void	ft_indexing(s_list *start, s_allData *stacks)
+void	ft_indexing(t_list *start, t_allData *stacks)
 {
 	int	i;
 
@@ -55,9 +55,9 @@ void	ft_indexing(s_list *start, s_allData *stacks)
 	stacks->max = i;
 }
 
-void	ft_5args(s_allData *stacks)
+void	ft_5args(t_allData *stacks)
 {
-	s_list	*t;
+	t_list	*t;
 	int		min;
 	int		cur;
 

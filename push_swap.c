@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	ft_sorting(s_list **stacks)
+void	ft_sorting(t_list **stacks)
 {
-	s_list	*last;
-	s_list	*pred;
+	t_list	*last;
+	t_list	*pred;
 
 	pred = NULL;
 	last = *stacks;
@@ -53,7 +53,7 @@ char	*read_line(int i, char **argv)
 	return (line);
 }
 
-void	read_arguments(int argc, char **argv, s_allData *stacks)
+void	read_arguments(int argc, char **argv, t_allData *stacks)
 {
 	int	i;
 	int	j;
@@ -86,13 +86,13 @@ void	read_arguments(int argc, char **argv, s_allData *stacks)
 
 int	main(int argc, char **argv)
 {
-	s_allData	*stacks;
-	s_list		*start;
+	t_allData	*stacks;
+	t_list		*start;
 	
-	stacks = malloc(sizeof(s_allData));
+	stacks = malloc(sizeof(t_allData));
 	if (!stacks)
 		return (0);
-	start = malloc(sizeof(s_list));
+	start = malloc(sizeof(t_list));
 	if (!start)
 		return (0);
 	stacks->stack_a = NULL;

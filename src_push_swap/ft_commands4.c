@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_rotate_b_a(s_allData *stacks)
+void	ft_rotate_b_a(t_allData *stacks)
 {
 	ft_push_bottom(stacks->stack_a);
 	ft_push_bottom(stacks->stack_b);
@@ -20,10 +20,10 @@ void	ft_rotate_b_a(s_allData *stacks)
 		ft_putstr("rr");
 }
 
-void	ft_swap_lst(s_list *stacks)
+void	ft_swap_lst(t_list *stacks)
 {
-	s_list	*tmp;
-	s_list	*add_element;
+	t_list	*tmp;
+	t_list	*add_element;
 
 	if (!stacks || !stacks->next)
 		return ;
@@ -34,9 +34,9 @@ void	ft_swap_lst(s_list *stacks)
 	tmp->next = add_element;
 }
 
-void	ft_push_top12(s_list *place1, s_list *place2)
+void	ft_push_top12(t_list *place1, t_list *place2)
 {
-	s_list	*top;
+	t_list	*top;
 
 	if (!place1)
 		return ;
@@ -49,10 +49,10 @@ void	ft_push_top12(s_list *place1, s_list *place2)
 	place2 = top;
 }
 
-void	ft_push_bottom(s_list *t)
+void	ft_push_bottom(t_list *t)
 {
-	s_list	*top;
-	s_list	*tmp;
+	t_list	*top;
+	t_list	*tmp;
 
 	if (!t || !t->next)
 		return ;
@@ -67,10 +67,10 @@ void	ft_push_bottom(s_list *t)
 	top->next = NULL;
 }
 
-void	ft_push_top(s_list *t)
+void	ft_push_top(t_list *t)
 {
-	s_list	*tmp;
-	s_list	*last;
+	t_list	*tmp;
+	t_list	*last;
 
 	if (!t || !t->next)
 		return ;

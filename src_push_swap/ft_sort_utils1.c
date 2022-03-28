@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_init_reshenie(s_allData *stacks)
+void	ft_init_reshenie(t_allData *stacks)
 {
 	stacks->big = ft_find_biggest_loop(stacks->stack_a, 1);
 	stacks->size = ft_lst_size(stacks->stack_a);
@@ -20,9 +20,9 @@ void	ft_init_reshenie(s_allData *stacks)
 	stacks->gen_size = stacks->max / stacks->generation;
 }
 
-int	ft_make_loop(s_list *tmp, s_list *begin, int number)
+int	ft_make_loop(t_list *tmp, t_list *begin, int number)
 {
-	s_list	*loop;
+	t_list	*loop;
 	int		max_index;
 	int		count;
 
@@ -49,12 +49,12 @@ int	ft_make_loop(s_list *tmp, s_list *begin, int number)
 	return (count);
 }
 
-int	ft_find_biggest_loop(s_list *begin, int number)
+int	ft_find_biggest_loop(t_list *begin, int number)
 {
-	s_list	*t;
+	t_list	*t;
 	int		maximum;
 	int		count;
-	s_list	*max_flag;
+	t_list	*max_flag;
 
 	maximum = 0;
 	t = begin;
@@ -73,10 +73,10 @@ int	ft_find_biggest_loop(s_list *begin, int number)
 	return (maximum);
 }
 
-int	ft_isswapable(s_list *tmp)
+int	ft_isswapable(t_list *tmp)
 {
-	s_list	example;
-	s_list	example2;
+	t_list	example;
+	t_list	example2;
 	int		counter1;
 	int		counter2;
 
@@ -91,10 +91,10 @@ int	ft_isswapable(s_list *tmp)
 	return (0);
 }
 
-s_list	*ft_blizko_ingroup(s_list *tmp, int gen, int generation_size)
+t_list	*ft_blizko_ingroup(t_list *tmp, int gen, int generation_size)
 {
-	s_list	*blizko;
-	s_list	*current;
+	t_list	*blizko;
+	t_list	*current;
 	int		distance;
 	int		current_distance;
 
