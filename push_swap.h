@@ -56,6 +56,7 @@ void	ft_free_list(t_list **list);
 void	push_stack(t_list **stack, int val, int tag, t_allData *stacks);
 int		ft_hasvalue(t_list *l, int val);
 int		ft_init_struct(t_allData **stacks, t_list **start);
+void	ft_push_front_lst(t_list **begin, t_list **elem);
 
 /* ft_functions 1-3 */
 int		ft_atoi(char *str, t_allData *stacks);
