@@ -38,21 +38,6 @@ void	ft_sorting(t_list **stacks)
 	}
 }
 
-char	*read_line(int i, char **argv)
-{
-	char	*line;
-	int		j;
-
-	j = 0;
-	line = ft_strdup("");
-	while (argv[i])
-	{
-		line = ft_strjoin(line, &argv[i][j]);
-		i++;
-	}
-	return (line);
-}
-
 void	read_arguments(int argc, char **argv, t_allData *stacks)
 {
 	int	i;
@@ -88,19 +73,11 @@ int	main(int argc, char **argv)
 {
 	t_allData	*stacks;
 	t_list		*start;
-	
-	stacks = malloc(sizeof(t_allData));
-	if (!stacks)
-		return (0);
-	start = malloc(sizeof(t_list));
-	if (!start)
-		return (0);
-	stacks->stack_a = NULL;
-	stacks->stack_b = NULL;
+
 	if (argc < 2)
-	{
 		return (0);
-	}
+	if (!ft_init_struct(&stacks, &start))
+		return (0);
 	read_arguments(argc, argv, stacks);
 	if (!ft_ordered(stacks))
 	{

@@ -28,9 +28,8 @@ void	push_stack(t_list **stack_a, int val, int tag, t_allData *stacks)
 	t_list	*elem;
 	t_list	*last_el;
 
-//	last_el = NULL;
-//	elem = NULL;
 	last_el = *stack_a;
+	/*проверка на дубликат, всем присваивается индекс -1*/
 	if (ft_hasvalue(*stack_a, val))
 		ft_error("Error\n", stacks);
 	elem = malloc(sizeof(t_list));
@@ -50,4 +49,17 @@ void	push_stack(t_list **stack_a, int val, int tag, t_allData *stacks)
 		last_el = last_el->next;
 	last_el->next = elem;
 	last_el->next_sorted = elem;
+}
+
+int	ft_init_struct(t_allData **stacks, t_list **start)
+{
+	*stacks = malloc(sizeof(t_allData));
+	if (!*stacks)
+		return (0);
+	*start = malloc(sizeof(t_list));
+	if (!*start)
+		return (0);
+	(*stacks)->stack_a = NULL;
+	(*stacks)->stack_b = NULL;
+	return (1);
 }
