@@ -51,14 +51,16 @@ int ft_atoi(char *str, t_allData *stacks)
 
 int	ft_ordered(t_allData *stacks)
 {
-	int	pred;
-	t_list *t;
+	int		pred;
+	t_list	*t;
+	t_list	*begin;
 
 	if (stacks->stack_b)
 		return (0);
 	if (!stacks->stack_a)
 		return (1);
 	t = stacks->stack_a;
+	begin = t;
 	pred = t->value;
 	while (t)
 	{
@@ -66,6 +68,8 @@ int	ft_ordered(t_allData *stacks)
 			return (0);
 		pred = t->value;
 		t = t->next;
+		if (begin == t)
+			break ;
 	}
 	return (1);
 }

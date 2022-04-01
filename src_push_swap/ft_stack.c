@@ -12,13 +12,19 @@
 
 #include "../push_swap.h"
 
-int	ft_hasvalue(t_list *l, int val)
+int	ft_hasvalue(t_list *t, int val)
 {
-	while (l)
+	t_list	*begin;
+
+	begin = t;
+	while (t)
 	{
-		if (l->value == val)
+		if (t->value == val)
 			return (1);
-		l = l->next;
+		t = t->next;
+		/*уточнить, какой знак нам нужен */
+		if (begin == t)
+			break ;
 	}
 	return (0);
 }
