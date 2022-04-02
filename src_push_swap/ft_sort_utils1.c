@@ -55,9 +55,11 @@ int	ft_find_biggest_loop(t_list *begin, int number)
 	int		maximum;
 	int		count;
 	t_list	*max_flag;
+	t_list	*mark_start;
 
 	maximum = 0;
 	t = begin;
+	mark_start = t;
 	while (t)
 	{
 		count = ft_make_loop(begin, t, 0);
@@ -67,6 +69,8 @@ int	ft_find_biggest_loop(t_list *begin, int number)
 			max_flag = t;
 		}
 		t = t->next;
+		if (t == mark_start)
+			break ;
 	}
 	if (number)
 		ft_make_loop(begin, max_flag, 1);
