@@ -14,67 +14,114 @@
 
 void	ft_rotate_b_a(t_allData *stacks)
 {
-	ft_push_bottom(stacks->stack_a);
-	ft_push_bottom(stacks->stack_b);
+	ft_push_bottom(&(stacks->stack_a));
+	ft_push_bottom(&(stacks->stack_b));
 	if (stacks->print)
 		ft_putstr("rr");
 }
 
-void	ft_swap_lst(t_list *stacks)
+void	ft_swap_lst(t_list **stacks)
 {
-	t_list	*tmp;
-	t_list	*add_element;
+	t_list	*second_elem;
 
-	if (!stacks || !stacks->next)
+	second_elem = (*stacks)->next;
+	(*stacks)->next = (*stacks)->next->next;
+	(*stacks)->next->previous = *stacks;
+	second_elem->next = *stacks;
+	second_elem->previous = (*stacks)->previous;
+	(*stacks)->previous->next = second_elem;
+	(*stacks)->previous = second_elem;
+	(*stacks) = second_elem;
+
+	/* пример Марат
+	t_list	*second_element;
+	t_list	*third_element;
+
+	if (!*stacks || !(*stacks)->next)
 		return ;
-	add_element = stacks->next->next;
-	tmp = stacks;
-	stacks = stacks->next;
-	stacks->next = tmp;
+	second_element = (*stacks)->next;
+	if (second_element->next)
+		third_element = second_element->next;
+	else
+		third_element = *stacks;
+	second_element->next = *stacks;
+	second_element->previous = (*stacks)->previous;
+	(*stacks)->next = third_element;
+	(*stacks)->previous = second_element;
+	 */
+	/*
+	head = (*stacks);
+	second_element = (*stacks)->next;
+	(*stacks)->next->next = second_element->next;
+	(*stacks)->next = head;
+	(*stacks)->previous->next = second_element;
+	(*stacks)->previous = head->previous;
+	(*stacks) = second_element;
+*/
+	/*
+	add_element = (*stacks)->next->next;
+	tmp = *stacks;
+	stacks = (*stacks)->next;
+	(*stacks)->next = tmp;
 	tmp->next = add_element;
+ */
 }
 
-void	ft_push_top12(t_list *place1, t_list *place2)
+/* точно надо поменять функцию эту */
+void	ft_push_top12(t_list **place1, t_list **place2)
 {
 	t_list	*top;
 
-	if (!place1)
+	if (!*place1)
 		return ;
-	top = place1;
-	place1 = top->next;
-	if (place2)
-		top->next = place2;
+	top = *place1;
+	*place1 = top->next;
+	if (*place2)
+		top->next = *place2;
 	else
 		top->next = NULL;
-	place2 = top;
+	*place2 = top;
 }
 
-void	ft_push_bottom(t_list *t)
+void	ft_push_bottom(t_list **t)
 {
-	t_list	*top;
-	t_list	*tmp;
+//	t_list	*top;
+//	t_list	*tmp;
 
-	if (!t || !t->next)
+	if (!*t || !(*t)->next)
 		return ;
-	top = t;
+//	top = t;
+	*t = (*t)->next;
+
+	/*
 	t = t->next;
 	tmp = t;
 	while (tmp->next)
 	{
 		tmp = tmp->next;
+		if (t == tmp)
+			break ;
 	}
 	tmp->next = top;
 	top->next = NULL;
+	*/
 }
 
-void	ft_push_top(t_list *t)
+void	ft_push_top(t_list **t)
 {
-	t_list	*tmp;
-	t_list	*last;
+//	t_list	*tmp;
+//	t_list	*last;
 
-	if (!t || !t->next)
+	if (!*t || !(*t)->next)
 		return ;
-	last = t;
+//	last = t;
+	*t = (*t)->previous;
+	/*
+	last = t->previous;
+	last->previous = t->previous->previous;
+	last = t->next;
+	t = last->next;
+
 	while (last->next)
 	{
 		tmp = last;
@@ -83,4 +130,5 @@ void	ft_push_top(t_list *t)
 	last->next = t;
 	t = last;
 	tmp->next = NULL;
+	 */
 }

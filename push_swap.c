@@ -84,8 +84,13 @@ int	main(int argc, char **argv)
 		start = stacks->stack_a;
 		ft_sorting(&start);
 		ft_indexing(start, stacks);
-		if (stacks->max == 5)
-			ft_5args(stacks);
+		if (stacks->max < 6)
+		{
+			ft_sort_small(stacks);
+			return (0);
+		}
+//		if (stacks->max == 5)
+//			ft_5args(stacks);
 		ft_reshenie(stacks, 1);
 	}
 	/* CLEAR ALL добавить */

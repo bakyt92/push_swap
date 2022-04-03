@@ -17,6 +17,7 @@ SRC = ./src_push_swap/ft_commands1.c \
       	./src_push_swap/ft_libft.c \
       	./src_push_swap/ft_sort1.c \
       	./src_push_swap/ft_sort2.c \
+      	./src_push_swap/ft_sort3.c \
       	./src_push_swap/ft_sort_utils1.c \
       	./src_push_swap/ft_stack.c push_swap.c \
       	./libft/ft_arg.c \

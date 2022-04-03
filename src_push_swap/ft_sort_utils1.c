@@ -89,7 +89,7 @@ int	ft_isswapable(t_list *tmp)
 	example2.next = tmp->next->next;
 	example2.index = tmp->index;
 	counter1 = ft_find_biggest_loop(tmp, 0);
-	counter2 = ft_find_biggest_loop(&example, 0);
+	counter2 = ft_find_biggest_loop(&example2, 0);
 	if (counter2 > counter1)
 		return (1);
 	return (0);
@@ -105,7 +105,7 @@ t_list	*ft_blizko_ingroup(t_list *tmp, int gen, int generation_size)
 	distance = gen * generation_size;
 	blizko = NULL;
 	current = tmp;
-	while (current)
+	while (current && current->next != tmp)
 	{
 		if (current->index <= generation_size * gen && !current->flag)
 		{

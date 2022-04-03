@@ -14,36 +14,36 @@
 
 void	ft_swap_a(t_allData *stacks)
 {
-	ft_swap_lst(stacks->stack_a);
+	ft_swap_lst(&(stacks->stack_a));
 	if (stacks->print)
 		ft_putstr("sa");
 }
 
 void	ft_swap_b(t_allData *stacks)
 {
-	ft_swap_lst(stacks->stack_b);
+	ft_swap_lst(&(stacks->stack_b));
 	if (stacks->print)
 		ft_putstr("sb");
 }
 
 void	ft_swap_b_a(t_allData *stacks)
 {
-	ft_swap_lst(stacks->stack_a);
-	ft_swap_lst(stacks->stack_b);
+	ft_swap_lst(&(stacks->stack_a));
+	ft_swap_lst(&(stacks->stack_b));
 	if (stacks->print)
 		ft_putstr("ss");
 }
 
 void	ft_push_a(t_allData *stacks)
 {
-	ft_push_top12(stacks->stack_b, stacks->stack_a);
+	ft_push_top12(&(stacks->stack_b), &(stacks->stack_a));
 	if (stacks->print)
 		ft_putstr("pa");
 }
 
 void	ft_push_b(t_allData *stacks)
 {
-	ft_push_top12(stacks->stack_a, stacks->stack_b);
+	ft_push_top12(&(stacks->stack_a), &(stacks->stack_b));
 	if (stacks->print)
 		ft_putstr("pb");
 }

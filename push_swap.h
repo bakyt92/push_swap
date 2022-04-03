@@ -72,9 +72,11 @@ t_list	*ft_get_last(t_list *t);
 void	ft_sorting(t_list **stacks);
 void	read_arguments(int argc, char **argv, t_allData *stacks);
 
-/* ft_sort 1-2 */
+/* ft_sort 1-3 */
 void	ft_indexing(t_list *start, t_allData *stacks);
+void	ft_sort_small(t_allData *stacks);
 void	ft_5args(t_allData *stacks);
+void	ft_3args(t_allData *stacks);
 int		ft_count_to_top(t_list *t, int index);
 int		ft_has_index(t_list *t, int index);
 void	ft_reshenie(t_allData *stacks, int gen);
@@ -105,9 +107,9 @@ void	ft_reverse_rotate_b_a(t_allData *stacks);
 void	ft_rotate_a(t_allData *stacks);
 void	ft_rotate_b(t_allData *stacks);
 void	ft_rotate_b_a(t_allData *stacks);
-void	ft_swap_lst(t_list *stacks);
-void	ft_push_top12(t_list *place1, t_list *place2);
-void	ft_push_bottom(t_list *t);
-void	ft_push_top(t_list *t);
+void	ft_swap_lst(t_list **stacks);
+void	ft_push_top12(t_list **place1, t_list **place2);
+void	ft_push_bottom(t_list **t);
+void	ft_push_top(t_list **t);
 
 #endif
