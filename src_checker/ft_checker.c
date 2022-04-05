@@ -62,12 +62,14 @@ int	main(int argc, char **argv)
 	if (!ft_init_struct(&stacks))
 		return (0);
 	read_arguments(argc, argv, stacks);
+	stacks->print = 0;
 	while (1)
 	{
 		str = get_next_line(0);
 		if (!str)
 			break ;
 		ft_execute_command(str, &stacks);
+		free(str);
 	}
 	if (ft_ordered(stacks) && stacks->stack_b == NULL)
 		write(1, "OK\n", 3);
@@ -77,5 +79,6 @@ int	main(int argc, char **argv)
 		ft_free_list(&(stacks->stack_a));
 	if (stacks->stack_b)
 		ft_free_list(&(stacks->stack_b));
+	free(stacks);
 	return (0);
 }

@@ -74,7 +74,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	free (s1);
 	return (str);
 }
-
+/*
 size_t	ft_strlen(const char *str)
 {
 	int	i;
@@ -84,3 +84,4 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+*/

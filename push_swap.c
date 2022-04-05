@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!ft_init_struct(&stacks))
 		return (0);
+	stacks->print = 1;
 	read_arguments(argc, argv, stacks);
 	if (!ft_ordered(stacks))
 	{

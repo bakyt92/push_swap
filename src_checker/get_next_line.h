@@ -16,12 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "../push_swap.h"
 
 char		*ft_strdup(const char *s);
 char		*ft_strchr(const char *s, int ch);
 char		*ft_strjoin(char *s1, char *s2);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t		ft_strlen(const char *str);
 char		*get_next_line(int fd);
 char		*ft_get_one_line(char *main_str);
 char		*ft_del_one_line(char *main_str);
