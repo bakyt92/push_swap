@@ -19,4 +19,7 @@
 # include "../push_swap.h"
 # include "get_next_line.h"
 
+void	ft_execute_command(char *str, t_allData **stacks);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
 #endif

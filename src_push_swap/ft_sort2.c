@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+/*
 void	ft_reshenie(t_allData *stacks, int gen)
 {
 	int	distance;
@@ -86,7 +86,7 @@ void	ft_calculate_b_rotation(t_allData *stacks, int max_dist, int *rot_a,
 		stacks->temp = stacks->temp->next;
 	}
 }
-
+*/
 int ft_count_to_index(int index, int size)
 {
 	if (index >= size / 2)

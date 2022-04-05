@@ -78,11 +78,11 @@ void	ft_4args(t_allData *stacks);
 void	ft_3args(t_allData *stacks);
 int		ft_count_to_top(t_list *t, int index);
 int		ft_has_index(t_list *t, int index);
-void	ft_reshenie(t_allData *stacks, int gen);
-void	ft_populate_b(t_allData *stacks);
+//void	ft_reshenie(t_allData *stacks, int gen);
+//void	ft_populate_b(t_allData *stacks);
 int		ft_count_to_index(int index, int size);
-void	ft_calculate_b_rotation(t_allData *stacks, int max_dist, int *rot_a,
-								int *rot_b);
+//void	ft_calculate_b_rotation(t_allData *stacks, int max_dist, int *rot_a,
+//								int *rot_b);
 int		ft_insert_distance(t_list *list, int t, int size);
 void	ft_sort_big(t_allData *stacks);
 void	ft_butterfly(t_allData *stacks, int counter);
