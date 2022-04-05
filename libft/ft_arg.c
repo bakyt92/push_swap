@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:05:13 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:05:22 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/04/06 01:51:30 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_putstr(char *str)
 		write(1, str, 1);
 		str++;
 	}
-	write(1,"\n", 1);
+	write (1, "\n", 1);
 }
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -31,22 +31,22 @@ int ft_isdigit(int c)
 
 int	check_arg(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' &&  str[i] <= '9')
-			return(1);
+		if (str[i] >= '0' && str[i] <= '9')
+			return (1);
 		else
 			i++;
 	}
 	return (0);
 }
 
-void ft_error (char *str, t_allData *stacks)
+void	ft_error(char *str, t_allData *stacks)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

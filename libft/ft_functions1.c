@@ -6,13 +6,13 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:05:39 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:05:44 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/04/06 01:48:15 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int ft_atoi(char *str, t_allData *stacks)
+int	ft_atoi(char *str, t_allData *stacks)
 {
 	long	number;
 	int		znak;
@@ -20,7 +20,7 @@ int ft_atoi(char *str, t_allData *stacks)
 	znak = 1;
 	number = 0;
 	while (*str == ' ' || *str == '\t' || *str == '\n'
-	|| *str == '\v' || *str == '\f' || *str == '\r')
+		|| *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	while (*str == '+' || *str == '-')
 	{
@@ -31,8 +31,8 @@ int ft_atoi(char *str, t_allData *stacks)
 	while (*str && ft_isdigit(*str))
 	{
 		number = number * 10 + (*str - '0');
-		if ((znak == 1 && number > 0x7FFFFFFF) || (znak == -1 && number >
-		0x80000000))
+		if ((znak == 1 && number > 0x7FFFFFFF) || (znak == -1 && number
+				> 0x80000000))
 			ft_error("Error\n", stacks);
 		str++;
 	}
