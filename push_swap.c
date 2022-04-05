@@ -89,11 +89,17 @@ int	main(int argc, char **argv)
 			ft_sort_small(stacks);
 			return (0);
 		}
+		else
+			ft_sort_big(stacks);
 //		if (stacks->max == 5)
 //			ft_5args(stacks);
-		ft_reshenie(stacks, 1);
+//		ft_reshenie(stacks, 1);
 	}
-	/* CLEAR ALL добавить */
-	start = NULL;
+//	if (stacks->stack_a)
+//		ft_free_list(stacks->stack_a);
+//	if (stacks->stack_b)
+//		ft_free_list(stacks->stack_b);
+//	start = NULL;
+//	stacks = NULL;
 	return (0);
 }

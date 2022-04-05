@@ -36,14 +36,26 @@ void	ft_swap_b_a(t_allData *stacks)
 
 void	ft_push_a(t_allData *stacks)
 {
+	int size_stack;
+
+	size_stack = ft_lst_size(stacks->stack_b);
 	ft_push_top12(&(stacks->stack_b), &(stacks->stack_a));
+	size_stack -= 1;
+	if (size_stack == 0)
+		stacks->stack_b = NULL;
 	if (stacks->print)
 		ft_putstr("pa");
 }
 
 void	ft_push_b(t_allData *stacks)
 {
+	int size_stack;
+
+	size_stack = ft_lst_size(stacks->stack_a);
 	ft_push_top12(&(stacks->stack_a), &(stacks->stack_b));
+	size_stack -= 1;
+	if (size_stack == 0)
+		stacks->stack_a = NULL;
 	if (stacks->print)
 		ft_putstr("pb");
 }

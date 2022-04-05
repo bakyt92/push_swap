@@ -67,11 +67,32 @@ void	ft_swap_lst(t_list **stacks)
  */
 }
 
-/* точно надо поменять функцию эту */
+/* точно не надо поменять функцию эту */
 void	ft_push_top12(t_list **place1, t_list **place2)
 {
-	t_list	*top;
+	t_list	*top1;
 
+	if (!*place1)
+		return ;
+	top1 = (*place1)->next;
+	(*place1)->previous->next = (*place1)->next;
+	(*place1)->next->previous = (*place1)->previous;
+	if (*place2)
+	{
+		(*place1)->next = *place2;
+		(*place1)->previous = (*place2)->previous;
+		*place2 = *place1;
+		(*place2)->next->previous = *place2;
+		(*place2)->previous->next = *place2;
+	}
+	else
+	{
+		(*place1)->next = *place1;
+		(*place1)->previous = *place1;
+		*place2 = *place1;
+	}
+	(*place1) = top1;
+	/*
 	if (!*place1)
 		return ;
 	top = *place1;
@@ -81,6 +102,7 @@ void	ft_push_top12(t_list **place1, t_list **place2)
 	else
 		top->next = NULL;
 	*place2 = top;
+	 */
 }
 
 void	ft_push_bottom(t_list **t)

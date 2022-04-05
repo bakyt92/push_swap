@@ -2,23 +2,13 @@
 
 void	ft_sort_small(t_allData *stacks)
 {
-	t_list	*t;
-
-	t = stacks->stack_a;
-	while (ft_lst_size(stacks->stack_a) > 3)
-	{
-		if (ft_lst_size(stacks->stack_a) == 4)
-		{
-			ft_has_index(t, 4);
-			ft_3args(stacks);
-		}
-		if (ft_lst_size(stacks->stack_a) == 5)
-			ft_5args(stacks);
-	}
+	if (ft_lst_size(stacks->stack_a) == 5)
+		ft_5args(stacks);
+	if (ft_lst_size(stacks->stack_a) == 4)
+		ft_4args(stacks);
 	if (ft_lst_size(stacks->stack_a) == 3)
 		ft_3args(stacks);
 }
-
 void	ft_3args(t_allData *stacks)
 {
 	int	a;
@@ -39,6 +29,63 @@ void	ft_3args(t_allData *stacks)
 		ft_swap_a(stacks);
 }
 
+void	ft_4args(t_allData *stacks)
+{
+	while (ft_lst_size(stacks->stack_a) > 3)
+	{
+		if (stacks->stack_a->index == 1)
+			ft_push_b(stacks);
+		ft_rotate_a(stacks);
+	}
+	ft_3args(stacks);
+	ft_push_a(stacks);
+}
+
+void	ft_5args(t_allData *stacks)
+{
+	while (ft_lst_size(stacks->stack_a) > 3)
+	{
+		if (stacks->stack_a->index == 1 || stacks->stack_a->index == 2)
+			ft_push_b(stacks);
+		else
+			ft_rotate_a(stacks);
+	}
+	ft_3args(stacks);
+	ft_push_a(stacks);
+	ft_push_a(stacks);
+	if (stacks->stack_a->index > stacks->stack_a->next->index)
+		ft_swap_a(stacks);
+}
+	/*
+
+	{
+
+	}
+
+
+	while (ft_lst_size(stacks->stack_a) > 3)
+	{
+		if (stacks->stack_a->index == 1 || stacks->stack_a->index == 2)
+			ft_push_b(stacks);
+		ft_rotate_a(stacks);
+	}
+	if (ft_lst_size(stacks->stack_a) == 3)
+		ft_3args(stacks);
+	while (ft_lst_size(stacks->stack_b) > 0)
+	{
+		if (stacks->stack_b->index == 5)
+		{
+			ft_push_a(stacks);
+			ft_rotate_a(stacks);
+		}
+		stacks->stack_b = stacks->stack_b->next;
+		if (stacks->stack_b->index == 1)
+			ft_push_a(stacks);
+	}
+}
+*/
+
+/*
 void	ft_5args(t_allData *stacks)
 {
 	t_list	*t;
@@ -68,3 +115,4 @@ void	ft_5args(t_allData *stacks)
 			ft_rotate_a(stacks);
 	}
 }
+*/
