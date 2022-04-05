@@ -18,9 +18,13 @@ void	ft_free_list(t_list **list)
 	t_list	*next;
 
 	t = *list;
+//	free(t->previous);
 	while(t)
 	{
 		next = t->next;
+
+//		free(t->next);
+		free(t->next_sorted);
 		free(t);
 		t = next;
 	}

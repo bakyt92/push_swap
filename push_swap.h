@@ -17,13 +17,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct t_list {
+typedef struct s_list {
 	int				value;
 	int				index;
 	int				flag;
-	struct t_list	*next;
-	struct t_list	*previous;
-	struct t_list	*next_sorted;
+	struct s_list	*next;
+	struct s_list	*previous;
+	struct s_list	*next_sorted;
 }					t_list;
 
 typedef struct s_allData {
@@ -39,8 +39,7 @@ typedef struct s_allData {
 }			t_allData;
 
 /* ft_libft  */
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char *s1, char *s2);
+
 int		ft_strlen(const char *str);
 
 /* ft_arg */

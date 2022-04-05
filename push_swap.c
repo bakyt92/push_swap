@@ -95,10 +95,12 @@ int	main(int argc, char **argv)
 //			ft_5args(stacks);
 //		ft_reshenie(stacks, 1);
 	}
-//	if (stacks->stack_a)
-//		ft_free_list(stacks->stack_a);
+	if (stacks->stack_a)
+		ft_free_list(&(stacks->stack_a));
+	free(stacks);
+	free(start);
 //	if (stacks->stack_b)
-//		ft_free_list(stacks->stack_b);
+//		ft_free_list(&(stacks->stack_b));
 //	start = NULL;
 //	stacks = NULL;
 	return (0);
