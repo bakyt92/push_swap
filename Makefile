@@ -14,6 +14,7 @@ SRC = ./src_push_swap/ft_commands1.c \
       	./src_push_swap/ft_commands2.c \
       	./src_push_swap/ft_commands3.c \
       	./src_push_swap/ft_commands4.c \
+      	./src_push_swap/ft_parser.c \
       	./src_push_swap/ft_libft.c \
       	./src_push_swap/ft_sort1.c \
       	./src_push_swap/ft_sort2.c \
@@ -26,11 +27,18 @@ SRC = ./src_push_swap/ft_commands1.c \
         ./libft/ft_functions1.c \
         ./libft/ft_functions2.c
 
-# SRC_B =
+SRC_B = ./src_checker/ft_checker.c \
+		./src_checker/get_next_line.c \
+		./src_checker/get_next_line_utils.c \
+		./src_push_swap/ft_parser.c \
+		./src_push_swap/ft_stack.c \
+		./libft/ft_functions1.c \
+		./libft/ft_arg.c \
+		./libft/ft_clean.c
 
 OBJ = $(SRC:%.c= %.o)
 
-#OBJ_B = $(SRC_B:%.c= %.o)
+OBJ_B = $(SRC_B:%.c= %.o)
 
 .PHONY : all clean fclean re
 

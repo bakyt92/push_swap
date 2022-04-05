@@ -1,8 +1,10 @@
-//
-// Created by Ultron Fitzhugh on 4/5/22.
-//
+#ifndef FT_CHECKER_H
+# define FT_CHECKER_H
 
-#ifndef INC_05_1_PUSH_SWAP_FT_CHECKER_H
-#define INC_05_1_PUSH_SWAP_FT_CHECKER_H
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "../push_swap.h"
+# include "get_next_line.h"
 
-#endif //INC_05_1_PUSH_SWAP_FT_CHECKER_H
+#endif

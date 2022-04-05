@@ -16,17 +16,21 @@ void	ft_free_list(t_list **list)
 {
 	t_list	*t;
 	t_list	*next;
+	int		len;
+
+	len = ft_lst_size(*list);
 
 	t = *list;
 //	free(t->previous);
-	while(t)
+	while(len)
 	{
 		next = t->next;
 
 //		free(t->next);
-		free(t->next_sorted);
+//		free(t->next_sorted);
 		free(t);
 		t = next;
+		len--;
 	}
 	*list = NULL;
 }

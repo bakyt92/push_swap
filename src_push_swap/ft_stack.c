@@ -102,13 +102,10 @@ void	ft_push_front_lst(t_list **begin, t_list **elem)
 */
 }
 
-int	ft_init_struct(t_allData **stacks, t_list **start)
+int	ft_init_struct(t_allData **stacks)
 {
 	*stacks = malloc(sizeof(t_allData));
 	if (!*stacks)
-		return (0);
-	*start = malloc(sizeof(t_list));
-	if (!*start)
 		return (0);
 	(*stacks)->stack_a = NULL;
 	(*stacks)->stack_b = NULL;

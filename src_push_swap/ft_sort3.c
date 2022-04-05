@@ -4,10 +4,15 @@ void	ft_sort_small(t_allData *stacks)
 {
 	if (ft_lst_size(stacks->stack_a) == 5)
 		ft_5args(stacks);
-	if (ft_lst_size(stacks->stack_a) == 4)
+	else if (ft_lst_size(stacks->stack_a) == 4)
 		ft_4args(stacks);
-	if (ft_lst_size(stacks->stack_a) == 3)
+	else if (ft_lst_size(stacks->stack_a) == 3)
 		ft_3args(stacks);
+	else if (ft_lst_size(stacks->stack_a) == 2)
+	{
+		if (stacks->stack_a->index > stacks->stack_a->next->index)
+			ft_swap_a(stacks);
+	}
 }
 void	ft_3args(t_allData *stacks)
 {
