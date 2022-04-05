@@ -76,7 +76,6 @@ void	ft_sort_small(t_allData *stacks);
 void	ft_5args(t_allData *stacks);
 void	ft_4args(t_allData *stacks);
 void	ft_3args(t_allData *stacks);
-int		ft_count_to_top(t_list *t, int index);
 void	ft_sort_big(t_allData *stacks);
 void	ft_butterfly(t_allData *stacks, int counter);
 void	ft_sort_after_butterfly(t_allData *stacks);

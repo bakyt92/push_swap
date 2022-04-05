@@ -12,25 +12,6 @@
 
 #include "../push_swap.h"
 
-int	ft_count_to_top(t_list *t, int index)
-{
-	int	i;
-	int	size;
-
-	i = 0;
-	size = ft_lst_size(t);
-	while (t)
-	{
-		if (t->index == index)
-			break ;
-		t = t->next;
-		i++;
-	}
-	if (i > size / 2)
-		i = i - size;
-	return (i);
-}
-
 void	ft_indexing(t_list *start, t_allData *stacks)
 {
 	int		index;
