@@ -12,22 +12,6 @@
 
 #include "../push_swap.h"
 
-int	ft_has_index(t_list *t, int index)
-{
-	t_list	*begin;
-
-	begin = t;
-	while (t)
-	{
-		if (t->index == index)
-			return (1);
-		t = t->next;
-		if (t == begin)
-			break ;
-	}
-	return (0);
-}
-
 int	ft_count_to_top(t_list *t, int index)
 {
 	int	i;
