@@ -33,41 +33,8 @@ void	ft_swap_lst(t_list **stacks)
 	(*stacks)->previous = second_elem;
 	(*stacks) = second_elem;
 
-	/* пример Марат
-	t_list	*second_element;
-	t_list	*third_element;
-
-	if (!*stacks || !(*stacks)->next)
-		return ;
-	second_element = (*stacks)->next;
-	if (second_element->next)
-		third_element = second_element->next;
-	else
-		third_element = *stacks;
-	second_element->next = *stacks;
-	second_element->previous = (*stacks)->previous;
-	(*stacks)->next = third_element;
-	(*stacks)->previous = second_element;
-	 */
-	/*
-	head = (*stacks);
-	second_element = (*stacks)->next;
-	(*stacks)->next->next = second_element->next;
-	(*stacks)->next = head;
-	(*stacks)->previous->next = second_element;
-	(*stacks)->previous = head->previous;
-	(*stacks) = second_element;
-*/
-	/*
-	add_element = (*stacks)->next->next;
-	tmp = *stacks;
-	stacks = (*stacks)->next;
-	(*stacks)->next = tmp;
-	tmp->next = add_element;
- */
 }
 
-/* точно не надо поменять функцию эту */
 void	ft_push_top12(t_list **place1, t_list **place2)
 {
 	t_list	*top1;
@@ -92,65 +59,18 @@ void	ft_push_top12(t_list **place1, t_list **place2)
 		*place2 = *place1;
 	}
 	(*place1) = top1;
-	/*
-	if (!*place1)
-		return ;
-	top = *place1;
-	*place1 = top->next;
-	if (*place2)
-		top->next = *place2;
-	else
-		top->next = NULL;
-	*place2 = top;
-	 */
 }
 
 void	ft_push_bottom(t_list **t)
 {
-//	t_list	*top;
-//	t_list	*tmp;
-
 	if (!*t || !(*t)->next)
 		return ;
-//	top = t;
 	*t = (*t)->next;
-
-	/*
-	t = t->next;
-	tmp = t;
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-		if (t == tmp)
-			break ;
-	}
-	tmp->next = top;
-	top->next = NULL;
-	*/
 }
 
 void	ft_push_top(t_list **t)
 {
-//	t_list	*tmp;
-//	t_list	*last;
-
 	if (!*t || !(*t)->next)
 		return ;
-//	last = t;
 	*t = (*t)->previous;
-	/*
-	last = t->previous;
-	last->previous = t->previous->previous;
-	last = t->next;
-	t = last->next;
-
-	while (last->next)
-	{
-		tmp = last;
-		last = last->next;
-	}
-	last->next = t;
-	t = last;
-	tmp->next = NULL;
-	 */
 }
