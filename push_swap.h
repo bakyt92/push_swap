@@ -20,7 +20,6 @@
 typedef struct s_list {
 	int				value;
 	int				index;
-	int				flag;
 	struct s_list	*next;
 	struct s_list	*previous;
 	struct s_list	*next_sorted;
@@ -30,10 +29,6 @@ typedef struct s_allData {
 	t_list	*stack_a;
 	t_list	*stack_b;
 	t_list	*temp;
-	int		generation;
-	int		gen_size;
-	int		size;
-	int		big;
 	int		max;
 	int		print;
 }			t_allData;
@@ -60,12 +55,7 @@ void	ft_push_front_lst(t_list **begin, t_list **elem);
 /* ft_functions 1-3 */
 int		ft_atoi(char *str, t_allData *stacks);
 int		ft_ordered(t_allData *stacks);
-void	ft_sw_list(t_list **pred, t_list *last);
 int		ft_lst_size(t_list *t);
-int		ft_positive(int a);
-int		ft_maximum(int a, int b);
-int		ft_minimum(int a, int b);
-t_list	*ft_get_last(t_list *t);
 
 /* file push_swap */
 void	read_arguments(int argc, char **argv, t_allData *stacks);

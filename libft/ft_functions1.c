@@ -12,16 +12,6 @@
 
 #include "../push_swap.h"
 
-void	ft_sw_list(t_list **pred, t_list *last)
-{
-	t_list	*swap;
-
-	swap = *pred;
-	*pred = last->next_sorted;
-	swap->next_sorted = last->next_sorted->next_sorted;
-	(*pred)->next_sorted = swap;
-}
-
 int ft_atoi(char *str, t_allData *stacks)
 {
 	long	number;
