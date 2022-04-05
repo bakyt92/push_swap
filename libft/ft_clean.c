@@ -21,13 +21,9 @@ void	ft_free_list(t_list **list)
 	len = ft_lst_size(*list);
 
 	t = *list;
-//	free(t->previous);
 	while(len)
 	{
 		next = t->next;
-
-//		free(t->next);
-//		free(t->next_sorted);
 		free(t);
 		t = next;
 		len--;
