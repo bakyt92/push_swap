@@ -55,18 +55,5 @@ void ft_error (char *str, t_allData *stacks)
 		i++;
 	}
 	stacks = NULL;
-/*
-	if (stacks->stack_a)
-	{
-		write(1, "BP 1\n", 5);
-		ft_free_list(&(stacks->stack_b));
-	}
-	ft_free_list(&(stacks->stack_a));
-	if (stacks->stack_b)
-	{
-		write(1, "BP 2\n", 5);
-		ft_free_list(&(stacks->stack_b));
-	}
-*/
 	exit(EXIT_FAILURE);
 }

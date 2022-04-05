@@ -22,7 +22,6 @@ int	ft_hasvalue(t_list *t, int val)
 		if (t->value == val)
 			return (1);
 		t = t->next;
-		/*уточнить, какой знак нам нужен */
 		if (begin == t)
 			break ;
 	}
@@ -35,7 +34,6 @@ void	push_stack(t_list **stack_a, int val, int tag, t_allData *stacks)
 	t_list	*begin;
 
 	begin = *stack_a;
-	/*проверка на дубликат, всем присваивается индекс -1*/
 	if (ft_hasvalue(*stack_a, val))
 		ft_error("Error\n", stacks);
 	elem = malloc(sizeof(t_list));
@@ -56,13 +54,6 @@ void	push_stack(t_list **stack_a, int val, int tag, t_allData *stacks)
 		begin->next_sorted = elem;
 		ft_push_front_lst(&begin, &elem);
 	}
-
-	/*
-	while (last_el->next)
-		last_el = last_el->next;
-	last_el->next = elem;
-	last_el->next_sorted = elem;
-	 */
 }
 
 void	ft_push_front_lst(t_list **begin, t_list **elem)
@@ -81,25 +72,6 @@ void	ft_push_front_lst(t_list **begin, t_list **elem)
 		(*begin)->previous->next = *elem;
 		(*begin)->previous = *elem;
 	}
-
-	/*
-	t = *begin;
-	(*)
-
-	while (t)
-		t = t->next;
-	t->next = elem;
-	(*elem)->previous = t;
-	(*elem)->next = *begin;
-	(*begin)->previous = elem;
-
-
-	while (*begin)
-		*begin = (*begin)->next;
-	(*begin)->next = *elem;
-	(*begin)->next_sorted = *elem;
-	(*elem)->previous = *begin;
-*/
 }
 
 int	ft_init_struct(t_allData **stacks)

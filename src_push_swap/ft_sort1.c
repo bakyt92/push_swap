@@ -73,14 +73,5 @@ void	ft_indexing(t_list *start, t_allData *stacks)
 			break ;
 	}
 	stacks->max = ft_lst_size(start);
-/*
-	i = 0;
-	while (start)
-	{
-		start->index = i++;
-		start = start->next_sorted;
-	}
-	stacks->max = i;
-*/
 }
 

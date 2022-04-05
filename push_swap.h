@@ -68,7 +68,6 @@ int		ft_minimum(int a, int b);
 t_list	*ft_get_last(t_list *t);
 
 /* file push_swap */
-void	ft_sorting(t_list **stacks);
 void	read_arguments(int argc, char **argv, t_allData *stacks);
 
 /* ft_sort 1-4 */

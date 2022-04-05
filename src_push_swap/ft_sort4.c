@@ -15,7 +15,7 @@ void	ft_sort_big(t_allData *stacks)
 	else if (size <= 400)
 		counter = size / 20;
 	else if (size <= 500)
-		counter = size / 25;
+		counter = size / 23;
 	else if (size <= 1000)
 		counter = size / 30;
 	else
