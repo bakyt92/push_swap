@@ -83,11 +83,6 @@ void	ft_sort_after_butterfly(t_allData *stacks);
 t_list	*ft_indicate_max(t_allData *stacks);
 int		ft_find_destination(t_allData *stacks, t_list *max);
 
-
-/* ft_sort_utils */
-t_list	*ft_blizko_ingroup(t_list *tmp, int gen, int generation_size);
-int		ft_make_loop(t_list *tmp, t_list *begin, int number);
-
 /* ft_commands */
 void	ft_rotate(t_allData *stacks, int rot_a, int rot_b);
 void	ft_double_rotate(t_allData *stacks, int *rot_a, int *rot_b);
