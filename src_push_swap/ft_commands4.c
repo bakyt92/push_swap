@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 02:11:35 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/23 02:14:03 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/04/06 01:02:50 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_swap_lst(t_list **stacks)
 	(*stacks)->previous->next = second_elem;
 	(*stacks)->previous = second_elem;
 	(*stacks) = second_elem;
-
 }
 
 void	ft_push_top12(t_list **place1, t_list **place2)

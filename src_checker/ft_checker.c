@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 00:57:19 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/04/06 00:58:02 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_checker.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -42,7 +54,7 @@ void	ft_execute_command(char *str, t_allData **stacks)
 
 int	main(int argc, char **argv)
 {
-	t_allData 	*stacks;
+	t_allData	*stacks;
 	char		*str;
 
 	if (argc < 2)
@@ -54,7 +66,7 @@ int	main(int argc, char **argv)
 	{
 		str = get_next_line(0);
 		if (!str)
-			break;
+			break ;
 		ft_execute_command(str, &stacks);
 	}
 	if (ft_ordered(stacks) && stacks->stack_b == NULL)

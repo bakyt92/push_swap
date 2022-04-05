@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:06:37 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/20 21:17:05 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/04/06 01:04:07 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	ft_indexing(t_list *start, t_allData *stacks)
 	t_list	*current;
 
 	current = start;
-
 	while (current)
 	{
 		temp = current;
@@ -74,4 +73,3 @@ void	ft_indexing(t_list *start, t_allData *stacks)
 	}
 	stacks->max = ft_lst_size(start);
 }
-

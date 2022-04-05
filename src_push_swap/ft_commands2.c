@@ -6,7 +6,7 @@
 /*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 02:11:18 by ufitzhug          #+#    #+#             */
-/*   Updated: 2022/03/23 02:11:20 by ufitzhug         ###   ########.fr       */
+/*   Updated: 2022/04/06 01:01:57 by ufitzhug         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_swap_b_a(t_allData *stacks)
 
 void	ft_push_a(t_allData *stacks)
 {
-	int size_stack;
+	int	size_stack;
 
 	size_stack = ft_lst_size(stacks->stack_b);
 	ft_push_top12(&(stacks->stack_b), &(stacks->stack_a));
@@ -49,7 +49,7 @@ void	ft_push_a(t_allData *stacks)
 
 void	ft_push_b(t_allData *stacks)
 {
-	int size_stack;
+	int	size_stack;
 
 	size_stack = ft_lst_size(stacks->stack_a);
 	ft_push_top12(&(stacks->stack_a), &(stacks->stack_b));

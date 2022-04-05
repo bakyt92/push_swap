@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort3.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 00:53:13 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/04/06 00:53:37 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	ft_sort_small(t_allData *stacks)
@@ -14,6 +26,7 @@ void	ft_sort_small(t_allData *stacks)
 			ft_swap_a(stacks);
 	}
 }
+
 void	ft_3args(t_allData *stacks)
 {
 	int	a;
@@ -23,7 +36,6 @@ void	ft_3args(t_allData *stacks)
 	a = stacks->stack_a->index;
 	b = stacks->stack_a->next->index;
 	c = stacks->stack_a->previous->index;
-
 	if (a > b && a > c)
 		ft_rotate_a(stacks);
 	else if (b > a && b > c)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort4.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ufitzhug <ufitzhug@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 00:51:48 by ufitzhug          #+#    #+#             */
+/*   Updated: 2022/04/06 00:52:53 by ufitzhug         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	ft_sort_big(t_allData *stacks)
@@ -20,15 +32,15 @@ void	ft_sort_big(t_allData *stacks)
 		counter = size / 30;
 	else
 		counter = (size % 1000 * 2 + 30);
-	while(stacks->stack_a)
+	while (stacks->stack_a)
 		ft_butterfly(stacks, counter);
-	while(stacks->stack_b)
+	while (stacks->stack_b)
 		ft_sort_after_butterfly(stacks);
 }
 
 void	ft_butterfly(t_allData *stacks, int counter)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (stacks->stack_a)
@@ -52,7 +64,7 @@ void	ft_butterfly(t_allData *stacks, int counter)
 void	ft_sort_after_butterfly(t_allData *stacks)
 {
 	t_list	*max;
-	int 	destination;
+	int		destination;
 
 	max = ft_indicate_max(stacks);
 	destination = ft_find_destination(stacks, max);
@@ -88,7 +100,7 @@ t_list	*ft_indicate_max(t_allData *stacks)
 int	ft_find_destination(t_allData *stacks, t_list *max)
 {
 	t_list	*start;
-	int 	i;
+	int		i;
 
 	i = 0;
 	start = stacks->stack_b;
