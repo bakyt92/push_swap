@@ -28,7 +28,6 @@ typedef struct s_list {
 typedef struct s_allData {
 	t_list	*stack_a;
 	t_list	*stack_b;
-//	t_list	*temp;
 	int		max;
 	int		print;
 }			t_allData;

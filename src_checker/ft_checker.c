@@ -57,9 +57,7 @@ int	main(int argc, char **argv)
 	t_allData	*stacks;
 	char		*str;
 
-	if (argc < 2)
-		return (0);
-	if (!ft_init_struct(&stacks))
+	if (argc < 2 || !ft_init_struct(&stacks))
 		return (0);
 	read_arguments(argc, argv, stacks);
 	stacks->print = 0;
