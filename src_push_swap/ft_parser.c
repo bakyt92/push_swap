@@ -31,11 +31,8 @@ void	read_arguments(int argc, char **argv, t_allData *stacks)
 				!ft_isdigit(argv[i][j]))
 				ft_error("Error\n", stacks);
 			if (space_1 == 1 && argv[i][j] != ' ')
-			{
 				push_stack(&(stacks->stack_a), ft_atoi(argv[i] + j,
 						stacks), -1, stacks);
-				space_1 = 0;
-			}
 			space_1 = argv[i][j] == ' ';
 			j++;
 		}
