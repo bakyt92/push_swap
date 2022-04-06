@@ -12,43 +12,24 @@
 
 #include "../push_swap.h"
 
-void	ft_double_rotate(t_allData *stacks, int *rot_a, int *rot_b)
+void	ft_swap_a(t_allData *stacks)
 {
-	while (*rot_a > 0 && *rot_b > 0)
-	{
-		(*rot_a)--;
-		(*rot_b)--;
-		ft_rotate_b_a(stacks);
-	}
-	while (*rot_a < 0 && *rot_b < 0)
-	{
-		(*rot_a)++;
-		(*rot_b)++;
-		ft_reverse_rotate_b_a(stacks);
-	}
+	ft_swap_lst(&(stacks->stack_a));
+	if (stacks->print)
+		ft_putstr("sa");
 }
 
-void	ft_rotate(t_allData *stacks, int rot_a, int rot_b)
+void	ft_swap_b(t_allData *stacks)
 {
-	ft_double_rotate(stacks, &rot_a, &rot_b);
-	while (rot_a > 0)
-	{
-		rot_a--;
-		ft_rotate_a(stacks);
-	}
-	while (rot_a < 0)
-	{
-		rot_a++;
-		ft_reverse_rotate_a(stacks);
-	}
-	while (rot_b > 0)
-	{
-		rot_b--;
-		ft_rotate_b(stacks);
-	}
-	while (rot_b < 0)
-	{
-		rot_b++;
-		ft_reverse_rotate_b(stacks);
-	}
+	ft_swap_lst(&(stacks->stack_b));
+	if (stacks->print)
+		ft_putstr("sb");
+}
+
+void	ft_swap_b_a(t_allData *stacks)
+{
+	ft_swap_lst(&(stacks->stack_a));
+	ft_swap_lst(&(stacks->stack_b));
+	if (stacks->print)
+		ft_putstr("ss");
 }

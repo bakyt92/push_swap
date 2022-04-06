@@ -71,8 +71,6 @@ t_list	*ft_indicate_max(t_allData *stacks);
 int		ft_find_destination(t_allData *stacks, t_list *max);
 
 /* ft_commands */
-void	ft_rotate(t_allData *stacks, int rot_a, int rot_b);
-void	ft_double_rotate(t_allData *stacks, int *rot_a, int *rot_b);
 void	ft_swap_a(t_allData *stacks);
 void	ft_swap_b(t_allData *stacks);
 void	ft_swap_b_a(t_allData *stacks);
